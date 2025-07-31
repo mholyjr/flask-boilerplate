@@ -23,6 +23,8 @@ A bash script that generates a complete Flask application boilerplate with moder
 
 ### Usage
 
+#### Option 1: Local Usage
+
 1. Make the script executable:
    ```bash
    chmod +x create_flask_app.sh
@@ -31,6 +33,37 @@ A bash script that generates a complete Flask application boilerplate with moder
 2. Run the script with your app name:
    ```bash
    ./create_flask_app.sh my-awesome-app
+   ```
+
+#### Option 2: Global Installation
+
+To use the script from anywhere on your system:
+
+1. Make the script executable:
+   ```bash
+   chmod +x create_flask_app.sh
+   ```
+
+2. Move it to a directory in your PATH (choose one):
+   ```bash
+   # Option A: Copy to /usr/local/bin (recommended)
+   sudo cp create_flask_app.sh /usr/local/bin/create-flask-app
+   sudo chmod +x /usr/local/bin/create-flask-app
+   
+   # Option B: Create a symlink (keeps original file)
+   sudo ln -s $(pwd)/create_flask_app.sh /usr/local/bin/create-flask-app
+   
+   # Option C: Add to your personal bin directory
+   mkdir -p ~/bin
+   cp create_flask_app.sh ~/bin/create-flask-app
+   chmod +x ~/bin/create-flask-app
+   echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc  # or ~/.bashrc
+   source ~/.zshrc  # or source ~/.bashrc
+   ```
+
+3. Now you can use it from anywhere:
+   ```bash
+   create-flask-app my-awesome-app
    ```
 
 3. Follow the generated instructions to start your app:
